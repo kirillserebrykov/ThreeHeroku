@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;400&display=swap');
+
+ul[class],
+ol[class] {
+  padding: 0;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+
+
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+}
+.wrraper{
+    display: grid;
+    grid-auto-rows: 100%;
+
+    
+   
+    grid-template-columns: 1fr 1fr ;
+    grid-template-rows: 1fr ;
+    grid-template-areas: 'heading' '3d model  ' ;
+    position: relative;
+    top: 10px;
+    
+    
+}
+.Phone3d_wrraper{
+   position: absolute;
+   right: 0;
+    width: 500px;
+    height: 500px;
+    cursor:move;
+    animation: Phone-animation 2s ease-in-out ;
+    z-index: 1;
+    
+    
+}
+
+span{
+    font-family: 'Oswald', sans-serif;
+    display: inline-block;
+    text-align: center;
+    animation: span-animation 1.4s ease-in-out ;
+    
+}
+
+header{
+    background-color: #0a0a0a;
+   position: relative;
+    height: 40px;
+    z-index: 3;
+}
+h1{
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+    animation: h1 1s ease-in-out ;
+    position: relative;
+    align-self: end;
+   
+   
+
+}
+.TextInfo{
+    padding-left: 30px;
+   min-height: 480px;
+   display: grid;
+  justify-content: center;
+ 
+
+}
+
+@keyframes h1 {
+    0% { top: 0; left: -500px; opacity: 0;}
+
+    100% { top: 0; left: 0; opacity: 1;}
+}
+
+@keyframes span-animation {
+    0% {  opacity: 0;}
+
+    100% { opacity: 1;}
+}
+
+
+@keyframes Phone-animation {
+    0% { top: -500px;   opacity: 0;}
+
+    100% { top: 0; right: 0; opacity: 1;}
+}
+
+@media screen and (max-width: 1000px) {
+    .wrraper{
+       display: inline-grid;
+       grid-template-columns: 1fr  ;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 'TextInfo ' 'Phone3d ' ;
+    justify-content: center;
+     
+    }
+    .Phone3d_wrraper{
+        grid-area: Phone3d;
+        width: 100% ;
+        
+        
+    }
+    .Phone3d_wrraper canvas{
+     
+       
+       
+        
+    }
+    .TextInfo{
+        grid-area: TextInfo;
+        padding-right: 30px;
+        justify-content: center;
+       text-align: center;
+    }
+    @keyframes Phone-animation {
+       
+    }
+   }
+
+
